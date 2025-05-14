@@ -1,0 +1,54 @@
+.input-icon-wrapper {
+    position: relative;
+}
+
+.user-icon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 6px;
+    bottom: 14px;
+    color: black;
+}
+
+.eye-icon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 8px;
+    bottom: 14px;
+    color: black;
+}
+
+.forgot-pwd-div {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.form-fields {
+    color: rgb(51, 51, 51);
+    font-weight: 500;
+}
+
+.form-labels {
+    color: black; 
+    font-weight: 500;
+}
+
+.text-danger {
+    color: rgb(255, 84, 84) !important;
+}
+
+.form-check-input {
+    height: 15px;
+    width: 15px;
+    vertical-align: baseline;
+}
+
+.gradient-custom {
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+} 

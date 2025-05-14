@@ -1,0 +1,15 @@
+D:\Tatva\Assignment\Assignment.Service\bin\Debug\net7.0\Assignment.Service.deps.json
+D:\Tatva\Assignment\Assignment.Service\bin\Debug\net7.0\Assignment.Service.dll
+D:\Tatva\Assignment\Assignment.Service\bin\Debug\net7.0\Assignment.Service.pdb
+D:\Tatva\Assignment\Assignment.Service\bin\Debug\net7.0\Assignment.Repository.dll
+D:\Tatva\Assignment\Assignment.Service\bin\Debug\net7.0\Assignment.Repository.pdb
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.csproj.AssemblyReference.cache
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.AssemblyInfoInputs.cache
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.AssemblyInfo.cs
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.csproj.CoreCompileInputs.cache
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.csproj.CopyComplete
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.dll
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\refint\Assignment.Service.dll
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\Assignment.Service.pdb
+D:\Tatva\Assignment\Assignment.Service\obj\Debug\net7.0\ref\Assignment.Service.dll

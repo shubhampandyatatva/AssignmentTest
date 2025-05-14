@@ -1,0 +1,14 @@
+D:\Tatva\Assignment\Assignment.Repository\bin\Debug\net7.0\Assignment.Repository.deps.json
+D:\Tatva\Assignment\Assignment.Repository\bin\Debug\net7.0\Assignment.Repository.runtimeconfig.json
+D:\Tatva\Assignment\Assignment.Repository\bin\Debug\net7.0\Assignment.Repository.dll
+D:\Tatva\Assignment\Assignment.Repository\bin\Debug\net7.0\Assignment.Repository.pdb
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.csproj.AssemblyReference.cache
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.AssemblyInfoInputs.cache
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.AssemblyInfo.cs
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.csproj.CoreCompileInputs.cache
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.dll
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\refint\Assignment.Repository.dll
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.pdb
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\Assignment.Repository.genruntimeconfig.cache
+D:\Tatva\Assignment\Assignment.Repository\obj\Debug\net7.0\ref\Assignment.Repository.dll

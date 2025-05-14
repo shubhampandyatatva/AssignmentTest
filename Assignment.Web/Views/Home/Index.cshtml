@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<div class="text-center">
+    <h4 class="display-6">Welcome to the dashboard of assignment test!</h4>
+    <h4 style="margin-top: 16px;">Home page can be accessed by Admin only.</h4>
+    <h4 style="margin-top: 16px;">Privacy page can be accessed by User only.</h4>
+</div>
+
+<script>
+    var successMessage = '@TempData["SuccessMessage"]';
+    var errorMessage = '@TempData["ErrorMessage"]';
+    if (successMessage) {
+        toastr.success(successMessage);
+    }
+    if (errorMessage) {
+        toastr.error(errorMessage);
+    }
+</script> 
