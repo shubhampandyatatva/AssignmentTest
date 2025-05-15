@@ -65,6 +65,6 @@ public class UsersController : Controller
     public async Task<IActionResult> GetCommentsByBlogId(int id)
     {
         List<CommentViewModel> comments = await _userService.GetCommentViewModelByBlogId(id);
-        return PartialView("_CommentListPartial", comments);
+        return PartialView("_CommentsPartial", comments);
     }
 }
