@@ -62,9 +62,9 @@ public class UsersController : Controller
         return Json(new { success = false, message = "Failed to add comment" });
     }
 
-    public async Task<IActionResult> GetCommentsByBlogId(int id)
+    public async Task<IActionResult> GetCommentsByBlogId(int blogId)
     {
-        List<CommentViewModel> comments = await _userService.GetCommentViewModelByBlogId(id);
+        List<CommentViewModel> comments = await _userService.GetCommentViewModelByBlogId(blogId);
         return PartialView("_CommentsPartial", comments);
     }
 }

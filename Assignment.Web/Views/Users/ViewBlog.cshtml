@@ -44,7 +44,7 @@
 <script>
     function loadComments() {
         var blogId = '@Model.Id';
-        console.log("Blog ID: " + blogId);
+        console.log("Blog ID in loadComments: " + blogId);
 
         $.ajax({
             url: '/Users/GetCommentsByBlogId',
