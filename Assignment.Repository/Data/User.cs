@@ -20,4 +20,5 @@ public class User
     public int? Updatedby { get; set; }
     public DateTime? Updatedat { get; set; }
     public virtual Role? Role { get; set; }
+    public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 }

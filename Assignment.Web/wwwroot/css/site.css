@@ -27,6 +27,10 @@ body {
   cursor: pointer;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .modal-body img {
   height: 60px;
   width: 60px;
@@ -41,11 +45,48 @@ body {
 
 .BlogListContainer {
   margin-top: 80px;
+  padding: 0px 30px;
 }
+
+/* #blogListPartialView {
+  padding: 0px 60px;
+} */
 
 .create-new-blog-text {
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
   color: #106be2;
   font-weight: bold;
+}
+.blog-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  color: rgb(66, 66, 66);
+  font-weight: bold;
+}
+
+.blog-body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  color: rgb(66, 66, 66);
+  font-weight: bold;
+}
+
+.blog-body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  color: rgb(66, 66, 66);
+}
+
+.blog-tags {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: rgb(66, 66, 66);
+  font-weight: bold;
+}
+
+.blog-tags-users {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: rgb(66, 66, 66);
 }

@@ -1,0 +1,16 @@
+@model List<Assignment.Repository.ViewModels.CommentViewModel>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var comment in Model)
+    {
+        <div class="comment">
+            <p><strong>@comment.UserName:</strong> @comment.Content</p>
+            <p class="text-muted"><small>@(comment.Createddate?.ToString("g") ?? "")</small></p>
+        </div>
+    }
+}
+else
+{
+    <p>No comments yet. Be the first to comment!</p>
+}

@@ -37,11 +37,11 @@ public class AuthorizationController : Controller
         string roleId = _jwtService.GetClaimValue(jwtToken, ClaimTypes.Role);
         if (roleId == "1")
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Admin");
         }
         else
         {
-            return RedirectToAction("Privacy", "Home");
+            return RedirectToAction("Index", "Users");
         }
     } 
 
@@ -94,11 +94,11 @@ public class AuthorizationController : Controller
             string roleId = _jwtService.GetClaimValue(token, ClaimTypes.Role);
             if (roleId == "1")
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Admin");
             }
             else
             {
-                return RedirectToAction("Privacy", "Home");
+                return RedirectToAction("Index", "Users");
             }
         }
         else

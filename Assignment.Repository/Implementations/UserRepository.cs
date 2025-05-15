@@ -20,4 +20,29 @@ public class UserRepository : IUserRepository
         return user;
     }
 
+    public async Task<Blog> GetBlogById(int id)
+    {
+        return await _dbcontext.Blogs.FirstOrDefaultAsync(b => b.Id == id);
+    }
+
+    public Task<List<Comment>> GetCommentsByBlogId(int id)
+    {
+        return _dbcontext.Comments.Where(c => c.Blogid == id).OrderBy(c => c.Id).ToListAsync();
+    }
+
+    public async Task<bool> AddComment(Comment newComment)
+    {
+        try
+        {
+            _dbcontext.Comments.Add(newComment);
+            _dbcontext.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: " + e.Message);
+            return false;
+        }
+    }
+
 }

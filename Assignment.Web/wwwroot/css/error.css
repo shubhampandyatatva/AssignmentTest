@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(161, 233, 255); 
+}
+
+.first-line {
+    margin-top: 6vh;
+}
+
+.pizzashop-logo img {
+    height: 50px; 
+    width: 60px;
+}
+
+.pizzashop-title {
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #035a8b; 
+}
+
+.error-title { 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 14vh;
+    font-size: 200px;
+    color: #035a8b;
+    font-weight: bolder; 
+}
+
+.not-found {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 7vh;
+    font-size: 20px; 
+    color: rgb(40, 40, 40);  
+}
+
+.not-found-text {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3vh;
+    font-size: 16px; 
+    color: #0d5077;
+}

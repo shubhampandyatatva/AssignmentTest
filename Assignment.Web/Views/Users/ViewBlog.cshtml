@@ -1,0 +1,95 @@
+@{
+    ViewData["Title"] = "Read Blog";
+}
+@model Assignment.Repository.ViewModels.ViewBlogModel
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</head>
+
+<body>
+    <div class="main container-fluid py-3 px-3">
+        <div class="w-100 d-flex justify-content-end mb-4"><button type="button" class="btn btn-outline-primary"
+                onclick="window.location.href = '/Users/Index'">
+                < Back</button>
+        </div>
+        <div class="blog-title text-start mb-4">
+            <h4>Title: @Model.Title</h4>
+        </div>
+        <div class="blog-body-users mb-4">
+            @Html.Raw(Model.Body)
+        </div>
+        <div class="blog-tags-users mb-5">
+            <span>Topics: @Model.Tags</span>
+        </div>
+        <div class="blog-comments">
+            <h5 class="mb-2">Comments</h5>
+            <form id="addCommentForm mb-3">  
+                <div class="form-group mb-2">
+                    <label for="comment">Add a comment:</label>
+                    <textarea id="comment" class="form-control" rows="3"></textarea>
+                <span class="text-danger ms-1 mt-1"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+            </form>
+            <div id="existing-comments mt-4">
+                @Html.Partial("_CommentsPartial", Model.Comments)
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function loadComments() {
+        var blogId = '@Model.Id';
+        $.ajax({
+            url: '/Users/GetCommentsByBlogId',
+            type: 'GET',
+            data: { blogId: blogId },
+            success: function (response) {
+                $('#existing-comments').html(response);
+            },
+            error: function () {
+                alert('Error loading comments.');
+            }
+        });
+    }
+
+    $('#addCommentForm').on('submit', function (e) {
+        e.preventDefault();
+        var comment = $('#comment').val();
+        var blogId = '@Model.Id';
+        console.log("Blog ID: " + blogId);
+        console.log("Comment: " + comment);
+
+        if (!comment.trim()) {
+            $('.text-danger').text('Please write something in the comment box.');
+            return;
+        } else {
+            $('.text-danger').text('');
+        }
+
+        $.ajax({
+            url: '/Users/AddComment',
+            type: 'POST',
+            data: { comment: comment, blogId: blogId },
+            success: function (response) {
+                if(response.success)
+                {
+                    toastr.success('Comment added successfully.', 'Success'); 
+                    $('#comment').val('');
+                    loadComments();
+                }
+                else
+                {
+                    toastr.error('Some error occured in adding the comment', 'Error');
+                }
+            },
+            error: function () {
+                alert('Error adding comment.');
+            }
+        });
+    });
+</script>

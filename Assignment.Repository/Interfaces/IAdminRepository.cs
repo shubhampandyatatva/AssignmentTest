@@ -4,8 +4,12 @@ namespace Assignment.Repository.Interfaces;
 
 public interface IAdminRepository
 {
-    Task<List<Blog>> GetAllBlogs();
+    Task<bool> AddBlog(Blog blog);
+
+    Task<List<Blog>> GetAllBlogs(string searchString);
     Task<Blog> GetBlogById(int id);
+    Task<int> GetTotalBlogsCount();
+
     Task<bool> UpdateBlog(Blog blog);
 
 }

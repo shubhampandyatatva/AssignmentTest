@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@model Assignment.Repository.ViewModels.AddEditBlogViewModel
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>Create New Blog</title>
+    <script src="~/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#blogBody',
+            plugins: [
+                'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview',
+                'anchor', 'pagebreak',
+                'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code',
+                'fullscreen', 'insertdatetime',
+                'media', 'table', 'emoticons', 'template', 'help'
+            ],
+            toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+                'forecolor backcolor emoticons | help',
+            menu: {
+                favs: {
+                    title: 'My Favorites', items: 'code visualaid |' + 'searchreplace | emoticons'
+                }
+            },
+            menubar: 'favs file edit view insert format tools table help',
+            content_css: 'css/content.css'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid py-1">
+        <div class="heading-row d-flex justify-content-between align-items-center mb-4">
+            <div class="create-new-blog-text">Create a new blog!</div>
+            <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '/Admin/Index'">
+                < Back</button>
+        </div>
+
+        <form method="post" asp-controller="Admin" asp-action="PublishBlog" class="px-4">
+            <div class="mb-3">
+                <label for="blogTitle" class="form-label blog-title">Title</label>
+                <input type="text" class="form-control" id="blogTitle" asp-for="Title">
+                <span asp-validation-for="Title" class="text-danger ms-2 mt-1"></span>
+            </div>
+            <div class="mb-3">
+                <label for="floatingTextarea" class="blog-body">Body</label>
+                <textarea class="form-control" id="blogBody" asp-for="Body"></textarea>
+                <span asp-validation-for="Body" class="text-danger ms-2 mt-1"></span>
+            </div>
+            <div class="mb-2">
+                <label for="blogTags" class="form-label blog-tags">Enter Tags for the blog seperated body
+                    comma(,)</label>
+                <input type="text" class="form-control" id="blogTags" asp-for="Tags">
+                <span asp-validation-for="Tags" class="text-danger ms-2 mt-1"></span>
+            </div>
+            <div class="d-flex justify-content-start align-items-center mb-2">
+                <button type="submit" class="btn btn-primary">Publish</button>
+                <button type="reset" class="btn btn-outline-primary ms-2">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var successMessage = '@TempData["SuccessMessage"]';
+    var errorMessage = '@TempData["ErrorMessage"]';
+    if (successMessage) {
+        toastr.success(successMessage);
+    }
+    if (errorMessage) {
+        toastr.error(errorMessage);
+    }
+</script>

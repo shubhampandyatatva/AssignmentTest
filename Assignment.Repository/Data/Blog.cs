@@ -13,4 +13,5 @@ public class Blog
     [MaxLength(255)]
     public string? Tags { get; set; }
     public bool Isdeleted { get; set; }
+    public virtual ICollection<Comment> Comments { get; } = new List<Comment>();
 }

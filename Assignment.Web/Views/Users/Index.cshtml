@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Home";
+}
+@model List<Assignment.Repository.ViewModels.BlogListViewModel>
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+
+<div class="text-center mb-5">
+    <h4 class="display-5">Welcome to the Daily Blogs</h4>
+    <h4 style="margin-top: 20px;">Your day-to-day information update destination!</h4>
+</div>
+
+<div class="BlogListContainer">
+    <div class="HeadingRow d-flex justify-content-between align-items-center mb-3">
+        <div class="title">Recent Blogs by Admin</div>
+        <div><input type="text" id="searchInput" class="form-control" placeholder="Search"></div>
+    </div>
+
+    <div id="blogListPartialView">
+        @Html.Partial("_BlogListPartial", Model)
+    </div>
+</div>
+
+<script>
+    var successMessage = '@TempData["SuccessMessage"]';
+    var errorMessage = '@TempData["ErrorMessage"]';
+    if (successMessage) {
+        toastr.success(successMessage);
+    }
+    if (errorMessage) {
+        toastr.error(errorMessage);
+    }
+
+    function loadPage(page, pageSize, searchString) {
+        $.ajax({
+            url: "/Users/Index",
+            type: "GET",
+            data: { page: page, pageSize: pageSize, searchString: searchString },
+            success: function (response) {
+                $("#blogListPartialView").html(response);
+            },
+            error: function () {
+                alert("Some error occured in loading the partial view!");
+            }
+        });
+    }
+
+    function changePageSize() {
+        var pageSize = $("#itemsPerPage").val();
+        var searchString = $("#searchInput").val();
+        loadPage(1, pageSize, searchString);
+    }
+
+    $(document).on("input", "#searchInput", function () {
+        var searchString = $(this).val();
+        var pageSize = $("#itemsPerPage").val();
+        loadPage(1, pageSize, searchString);
+    });
+</script>

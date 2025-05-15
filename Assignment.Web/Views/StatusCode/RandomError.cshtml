@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Unknown Error";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/error.css"/>
+</head>
+
+<body>
+    <div class="container d-flex flex-column align-items-center vh-100">
+
+        <h1 class="error-title">@ViewBag.StatusCode</h1>
+
+        <h4 class="not-found">Some Unknown Error occured!</h4>
+
+        <h5 class="not-found-text">Please contact the administrator of this website or wait for sometime until it gets solved.</h5>
+    </div>
+</body> 

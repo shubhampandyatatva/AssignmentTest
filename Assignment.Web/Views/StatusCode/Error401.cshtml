@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "401 Error";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/error.css"/>
+</head>
+
+<body>
+    <div class="container d-flex flex-column align-items-center vh-100">
+
+        <h1 class="error-title">401</h1>
+
+        <h4 class="not-found">This action is unauthorized</h4>
+
+        <h5 class="not-found-text">You are not allowed to access this page!</h5>
+        
+        <h5 class="not-found-text">Please login to access the page</h5>
+        
+        <h5 class="not-found-text"><a href="/Authorization/Login">Login</a></h5>
+    </div>
+</body>
+
+    

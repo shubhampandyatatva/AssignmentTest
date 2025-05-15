@@ -53,6 +53,36 @@ namespace Assignment.Repository.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("Assignment.Repository.Data.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Blogid")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("Createddate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Userid")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Blogid");
+
+                    b.HasIndex("Userid");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("Assignment.Repository.Data.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -150,6 +180,25 @@ namespace Assignment.Repository.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Assignment.Repository.Data.Comment", b =>
+                {
+                    b.HasOne("Assignment.Repository.Data.Blog", "Blog")
+                        .WithMany("Comments")
+                        .HasForeignKey("Blogid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Repository.Data.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("Userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Assignment.Repository.Data.User", b =>
                 {
                     b.HasOne("Assignment.Repository.Data.Role", "Role")
@@ -161,9 +210,19 @@ namespace Assignment.Repository.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("Assignment.Repository.Data.Blog", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("Assignment.Repository.Data.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Assignment.Repository.Data.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }
