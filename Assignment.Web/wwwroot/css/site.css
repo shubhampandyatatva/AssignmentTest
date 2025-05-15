@@ -31,3 +31,21 @@ body {
   height: 60px;
   width: 60px;
 }
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #106be2;
+  font-weight: bold;
+}
+
+.BlogListContainer {
+  margin-top: 80px;
+}
+
+.create-new-blog-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #106be2;
+  font-weight: bold;
+}

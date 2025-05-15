@@ -24,13 +24,11 @@ public class JWTService : IJWTService
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        string role = await _rolePermissionsService.GetRoleNameByRoleId(user.Roleid);
-
         var claims = new[]
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, role)
+            new Claim(ClaimTypes.Role, user.Roleid.ToString())
         };
 
         var token = new JwtSecurityToken(

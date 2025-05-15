@@ -22,7 +22,7 @@ public class AuthorizationController : Controller
     [HttpGet]
     public async Task<IActionResult> Login()
     {
-        string jwtToken = Request.Cookies["JwtToken"];
+        string? jwtToken = Request.Cookies["JwtToken"];
         if (jwtToken == null)
         {
             return View();
@@ -34,8 +34,8 @@ public class AuthorizationController : Controller
         {
             return View();
         }
-        string role = _jwtService.GetClaimValue(jwtToken, ClaimTypes.Role);
-        if (role == "Admin")
+        string roleId = _jwtService.GetClaimValue(jwtToken, ClaimTypes.Role);
+        if (roleId == "1")
         {
             return RedirectToAction("Index", "Home");
         }
@@ -91,8 +91,8 @@ public class AuthorizationController : Controller
 
             TempData["SuccessMessage"] = "Successfully Logged In!";
 
-            string role = _jwtService.GetClaimValue(token, ClaimTypes.Role);
-            if (role == "Admin")
+            string roleId = _jwtService.GetClaimValue(token, ClaimTypes.Role);
+            if (roleId == "1")
             {
                 return RedirectToAction("Index", "Home");
             }
